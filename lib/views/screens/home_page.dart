@@ -45,24 +45,29 @@ class HomeScreen extends StatelessWidget {
             children: [
               AppText(
                 "Now showing..",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                height:0.7
 
               ),
-        SizedBox(height:4.0),
+              SizedBox(height:2.0),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   AppText(
                     "Movies in Ananeium",
-                    style: TextStyle(fontSize: 14),
+                    style: TextStyle(fontSize: 12,
+                    fontWeight: FontWeight.normal,
+                    color:Colors.grey),
+                    height:0.6
                   ),
-
-                  AppIcon(
+            Padding(
+               padding: EdgeInsets.only(top:4),
+              child:AppIcon(
                     icon: Icons.keyboard_arrow_down,
                     size: 16,
                     iconColor: Colors.grey,
                     backgroundColor: Colors.transparent,
-                  ),
+                  ),),
                 ],
               ),
             ],
@@ -71,7 +76,10 @@ class HomeScreen extends StatelessWidget {
           actions: [
             Padding(
               padding: EdgeInsets.only(right: 16),
-              child: ProfileAvatar(),
+              child: ProfileAvatar(
+              imageUrl: "https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
+
+              ),
             ),
           ],
         ),

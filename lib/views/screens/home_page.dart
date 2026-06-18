@@ -46,28 +46,30 @@ class HomeScreen extends StatelessWidget {
               AppText(
                 "Now showing..",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                height:0.7
-
+                height: 0.7,
               ),
-              SizedBox(height:2.0),
+              SizedBox(height: 2.0),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   AppText(
                     "Movies in Ananeium",
-                    style: TextStyle(fontSize: 12,
-                    fontWeight: FontWeight.normal,
-                    color:Colors.grey),
-                    height:0.6
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.grey,
+                    ),
+                    height: 0.6,
                   ),
-            Padding(
-               padding: EdgeInsets.only(top:4),
-              child:AppIcon(
-                    icon: Icons.keyboard_arrow_down,
-                    size: 16,
-                    iconColor: Colors.grey,
-                    backgroundColor: Colors.transparent,
-                  ),),
+                  Padding(
+                    padding: EdgeInsets.only(top: 4),
+                    child: AppIcon(
+                      icon: Icons.keyboard_arrow_down,
+                      size: 16,
+                      iconColor: Colors.grey,
+                      backgroundColor: Colors.transparent,
+                    ),
+                  ),
                 ],
               ),
             ],
@@ -77,7 +79,8 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(right: 16),
               child: ProfileAvatar(
-              imageUrl: "https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
+                imageUrl:
+                    "https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
               ),
             ),
           ],
@@ -93,15 +96,14 @@ class HomeScreen extends StatelessWidget {
                 child: Stack(
                   clipBehavior: Clip.none,
                   children: [
-
                     Positioned(
                       left: 100,
                       top: 20,
                       child: MoviePoster(
                         width: 230,
                         height: 260,
-                        image: "https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
-
+                        image:
+                            "https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
                       ),
                     ),
                     Positioned(
@@ -110,9 +112,8 @@ class HomeScreen extends StatelessWidget {
                       child: MoviePoster(
                         width: 230,
                         height: 310,
-                    image:"https://image.tmdb.org/t/p/w500/AoWY1gkcNzabh229Icboa1Ff0BM.jpg",
-
-
+                        image:
+                            "https://image.tmdb.org/t/p/w500/AoWY1gkcNzabh229Icboa1Ff0BM.jpg",
                       ),
                     ),
                     Positioned(
@@ -122,18 +123,18 @@ class HomeScreen extends StatelessWidget {
                         width: 230,
                         height: 300,
                         image:
-                        "https://image.tmdb.org/t/p/w500/d08HqqeBQSwN8i8MEvpsZ8Cb438.jpg",
+                            "https://image.tmdb.org/t/p/w500/d08HqqeBQSwN8i8MEvpsZ8Cb438.jpg",
                       ),
                     ),
                     MoviePoster(
-                      image:"https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
+                      image:
+                          "https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
 
                       height: 380,
-                      width:230
-
-                    )
-
-               ] ),
+                      width: 230,
+                    ),
+                  ],
+                ),
               ),
 
               SizedBox(height: 20),
@@ -142,16 +143,16 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   AppText(
                     "All Movies",
-                    style: TextStyle(fontSize: 22,
-                        fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                   ),
                   Spacer(),
-                  TextButton(onPressed: () {}, child: AppText(
+                  TextButton(
+                    onPressed: () {},
+                    child: AppText(
                       "View All",
-                    style:TextStyle(
-                      color:Colors.blue,
-                    )
-                  )),
+                      style: TextStyle(color: Colors.blue),
+                    ),
+                  ),
                 ],
               ),
 
@@ -167,7 +168,7 @@ class HomeScreen extends StatelessWidget {
 
                     return AppContainer(
                       width: 130,
-                      margin: EdgeInsets.only(right: 15),
+                      margin: EdgeInsets.only(right: 10),
                       padding: EdgeInsets.zero,
                       borderRadius: 18,
                       child: Column(

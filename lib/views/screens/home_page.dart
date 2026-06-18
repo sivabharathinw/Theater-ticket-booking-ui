@@ -193,7 +193,6 @@ class HomeScreen extends StatelessWidget {
                                   movie["name"]!,
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(height: 4),
                                 AppText(
                                   movie["duration"]!,
                                   style: TextStyle(

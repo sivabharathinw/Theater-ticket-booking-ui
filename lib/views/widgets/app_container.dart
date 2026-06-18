@@ -9,6 +9,7 @@ class AppContainer extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
   final BoxShape shape;
   final double borderRadius;
+  final BoxBorder? border;
 
   const AppContainer({
     super.key,
@@ -20,6 +21,7 @@ class AppContainer extends StatelessWidget {
     this.height,
     this.margin,
     this.shape = BoxShape.rectangle,
+    this.border,
   });
 
   @override
@@ -32,6 +34,7 @@ class AppContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor,
         shape: shape,
+        border: border,
         borderRadius: shape == BoxShape.rectangle 
             ? BorderRadius.circular(borderRadius) 
             : null,

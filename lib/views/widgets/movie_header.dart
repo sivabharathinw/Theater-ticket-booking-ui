@@ -13,24 +13,21 @@ class MovieHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 250,
+      height: 380,
       child: Stack(
+        clipBehavior: Clip.none,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(25),
-            child: Image.network(
-              imageUrl,
-              height: 180,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
+          Image.network(
+            imageUrl,
+            height: 250,
+            width: double.infinity,
+            fit: BoxFit.cover,
           ),
 
           Positioned(
             left: 20,
             right: 20,
-            bottom: 0,
-            top: 60,
+            top: 80,
             child: Container(
               decoration: BoxDecoration(
                 boxShadow: [

@@ -30,6 +30,7 @@ class HomeScreen extends StatelessWidget {
           "https://image.tmdb.org/t/p/w500/AoWY1gkcNzabh229Icboa1Ff0BM.jpg",
     },
   ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -77,7 +78,6 @@ class HomeScreen extends StatelessWidget {
               padding: EdgeInsets.only(right: 16),
               child: ProfileAvatar(
               imageUrl: "https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
-
               ),
             ),
           ],

@@ -66,7 +66,6 @@ class MovieSearchScreen extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.white,
-
         appBar: MyAppbar(
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

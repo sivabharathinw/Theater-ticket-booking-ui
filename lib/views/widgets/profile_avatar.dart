@@ -6,20 +6,18 @@ class ProfileAvatar extends StatelessWidget {
 
   const ProfileAvatar({super.key,
     this.imageUrl,
-    this.size = 40.0}
-      );
+    this.size = 40.0});
 
   @override
   Widget build(BuildContext context) {
     return
     Padding(
-      padding:EdgeInsets.only(top:30),
+      padding:EdgeInsets.only(top:20),
      child: CircleAvatar(
       radius: size / 2,
-      backgroundColor: Colors.grey.shade200,
-      child: Icon(Icons.person,
-          color: Colors.grey,
-          size: size * 0.6),
-     ), );
+      backgroundImage: NetworkImage(imageUrl?? "https://www.profilepicture.ai/free-pfp-maker"),
+
+      ),
+    );
   }
 }

@@ -86,24 +86,15 @@ class HomeScreen extends StatelessWidget {
                 child: Stack(
                   clipBehavior: Clip.none,
                   children: [
-                    Positioned(
-                      left: 20,
-                      top: 30,
-                      child: MoviePoster(
-                        width: 210,
-                        height: 290,
-                        image:"https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
 
-                      ),
-                    ),
                     Positioned(
-                      left: 30,
+                      left: 100,
                       top: 20,
                       child: MoviePoster(
                         width: 230,
-                        height: 300,
-                        image:
-                            "https://image.tmdb.org/t/p/w500/d08HqqeBQSwN8i8MEvpsZ8Cb438.jpg",
+                        height: 260,
+                        image: "https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+
                       ),
                     ),
                     Positioned(
@@ -112,7 +103,8 @@ class HomeScreen extends StatelessWidget {
                       child: MoviePoster(
                         width: 230,
                         height: 310,
-                        image:"https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
+                    image:"https://image.tmdb.org/t/p/w500/AoWY1gkcNzabh229Icboa1Ff0BM.jpg",
+
 
                       ),
                     ),
@@ -236,9 +228,9 @@ class MoviePoster extends StatelessWidget {
           borderRadius: BorderRadius.circular(25),
           boxShadow: [
             BoxShadow(
-              color: Colors.black,
-              blurRadius: 10,
-              offset: Offset(5, 5),
+              color: Colors.black26,
+              blurRadius: 15,
+              offset: Offset(7, 7),
             ),
           ],
         ),

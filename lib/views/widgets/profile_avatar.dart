@@ -6,7 +6,8 @@ class ProfileAvatar extends StatelessWidget {
 
   const ProfileAvatar({super.key,
     this.imageUrl,
-    this.size = 40.0});
+    this.size = 40.0}
+      );
 
   @override
   Widget build(BuildContext context) {

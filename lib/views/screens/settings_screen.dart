@@ -25,7 +25,6 @@ class SettingsScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
               Row(
                 children: [
                   ProfileAvatar(size: 60),

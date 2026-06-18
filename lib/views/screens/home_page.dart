@@ -30,7 +30,6 @@ class HomeScreen extends StatelessWidget {
           "https://image.tmdb.org/t/p/w500/AoWY1gkcNzabh229Icboa1Ff0BM.jpg",
     },
   ];
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

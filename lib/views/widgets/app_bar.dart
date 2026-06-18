@@ -8,5 +8,6 @@ class MyAppbar extends AppBar {
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.black),
         actions: actions,
-        toolbarHeight: 90      );
+        toolbarHeight: 90
+  );
 }

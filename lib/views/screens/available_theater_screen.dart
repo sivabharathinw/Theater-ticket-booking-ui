@@ -9,87 +9,126 @@ class TheaterAvailable extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.white,
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.deepOrange,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50),
+          ),
+          onPressed: () {},
+          child: Icon(Icons.arrow_forward, color: Colors.white),
+        ),
         body: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.all(20),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  MovieHeader(
-                    imageUrl:
-                        "https://image.tmdb.org/t/p/w500/d08HqqeBQSwN8i8MEvpsZ8Cb438.jpg",
-                    card: MoviCard(),
-                  ),
-                  SizedBox(height: 25),
-                  SizedBox(
-                    height: 75,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        DateCard(day: "FRI", date: "12", isSelected: true),
-                        SizedBox(width: 10),
-                        DateCard(day: "SAT", date: "13"),
-                        SizedBox(width: 10),
-                        DateCard(day: "SUN", date: "14"),
-                        SizedBox(width: 10),
-                        DateCard(day: "MON", date: "15"),
-                        SizedBox(width: 10),
-                        DateCard(day: "TUE", date: "16"),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: AppText(
-                      "Imagix Cinemas: Anaheim",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                MovieHeader(
+                  imageUrl:
+                      "https://image.tmdb.org/t/p/w500/d08HqqeBQSwN8i8MEvpsZ8Cb438.jpg",
+                  card: MoviCard(),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 75,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            DateCard(day: "FRI", date: "12", isSelected: true),
+                            SizedBox(width: 10),
+                            DateCard(day: "SAT", date: "13"),
+                            SizedBox(width: 10),
+                            DateCard(day: "SUN", date: "14"),
+                            SizedBox(width: 10),
+                            DateCard(day: "MON", date: "15"),
+                            SizedBox(width: 10),
+                            DateCard(day: "TUE", date: "16"),
+                          ],
+                        ),
                       ),
-                    ),
-                  ),
-                  SizedBox(height: 15),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Wrap(
-                      spacing: 10,
-                      children: [
-                        AppChip(label: "09:30 AM", onPressed: () {}),
-                        AppChip(label: "12:30 AM", onPressed: () {}),
-                        AppChip(label: "03:30 PM", onPressed: () {}),
-                        AppChip(label: "08:40 PM", onPressed: () {}),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 25),
 
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: AppText(
-                      "Escape Cinemas",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                      SizedBox(height: 20),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: AppText(
+                          "Imagix Cinemas: Anaheim",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
-                    ),
+                      SizedBox(height: 15),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Wrap(
+                          spacing: 10,
+                          children: [
+                            AppChip(label: "09:30 AM", onPressed: () {}),
+                            AppChip(label: "12:30 AM", onPressed: () {}),
+                            AppChip(label: "03:30 PM", onPressed: () {}),
+                            AppChip(label: "08:40 PM", onPressed: () {}),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 25),
+
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: AppText(
+                          "Escape Cinemas",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 15),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Wrap(
+                          spacing: 10,
+                          children: [
+                            AppChip(label: "09:30 AM", onPressed: () {}),
+                            AppChip(label: "12:30 AM", onPressed: () {}),
+                            AppChip(label: "03:30 PM", onPressed: () {}),
+                            AppChip(label: "08:40 PM", onPressed: () {}),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 25),
+
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: AppText(
+                          "Cineplex Movies",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 15),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Wrap(
+                          spacing: 10,
+                          children: [
+                            AppChip(label: "09:30 AM", onPressed: () {}),
+                            AppChip(label: "12:30 AM", onPressed: () {}),
+                            AppChip(label: "03:30 PM", onPressed: () {}),
+                            AppChip(label: "08:40 PM", onPressed: () {}),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 80),
+                    ],
                   ),
-                  SizedBox(height: 15),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Wrap(
-                      spacing: 10,
-                      children: [
-                        AppChip(label: "10:15 AM", onPressed: () {}),
-                        AppChip(label: "01:45 PM", onPressed: () {}),
-                        AppChip(label: "04:20 PM", onPressed: () {}),
-                        AppChip(label: "09:00 PM", onPressed: () {}),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
@@ -112,7 +151,6 @@ class MoviCard extends StatelessWidget {
             "Ant Man and the Wasp",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 15),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

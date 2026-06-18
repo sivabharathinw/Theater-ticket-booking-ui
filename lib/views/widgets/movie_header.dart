@@ -17,11 +17,14 @@ class MovieHeader extends StatelessWidget {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          Image.network(
-            imageUrl,
-            height: 250,
-            width: double.infinity,
-            fit: BoxFit.cover,
+          ClipRRect(
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(16)),
+            child: Image.network(
+              imageUrl,
+              height: 250,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
           ),
 
           Positioned(

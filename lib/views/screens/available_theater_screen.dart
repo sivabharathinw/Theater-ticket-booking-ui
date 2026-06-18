@@ -50,17 +50,20 @@ class TheaterAvailable extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 15),
-                  Wrap(
-                    spacing: 10,
-                    runSpacing: 10,
-                    children: [
-                      AppChip(label: "09:30 AM", onPressed: () {}),
-                      AppChip(label: "12:30 AM", onPressed: () {}),
-                      AppChip(label: "03:30 PM", onPressed: () {}),
-                      AppChip(label: "08:40 PM", onPressed: () {}),
-                    ],
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Wrap(
+                      spacing: 10,
+                      children: [
+                        AppChip(label: "09:30 AM", onPressed: () {}),
+                        AppChip(label: "12:30 AM", onPressed: () {}),
+                        AppChip(label: "03:30 PM", onPressed: () {}),
+                        AppChip(label: "08:40 PM", onPressed: () {}),
+                      ],
+                    ),
                   ),
                   SizedBox(height: 25),
+
                   Align(
                     alignment: Alignment.centerLeft,
                     child: AppText(
@@ -72,15 +75,17 @@ class TheaterAvailable extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 15),
-                  Wrap(
-                    spacing: 10,
-                    runSpacing: 10,
-                    children: [
-                      AppChip(label: "10:15 AM", onPressed: () {}),
-                      AppChip(label: "01:45 PM", onPressed: () {}),
-                      AppChip(label: "04:20 PM", onPressed: () {}),
-                      AppChip(label: "09:00 PM", onPressed: () {}),
-                    ],
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Wrap(
+                      spacing: 10,
+                      children: [
+                        AppChip(label: "10:15 AM", onPressed: () {}),
+                        AppChip(label: "01:45 PM", onPressed: () {}),
+                        AppChip(label: "04:20 PM", onPressed: () {}),
+                        AppChip(label: "09:00 PM", onPressed: () {}),
+                      ],
+                    ),
                   ),
                   SizedBox(height: 20),
                 ],

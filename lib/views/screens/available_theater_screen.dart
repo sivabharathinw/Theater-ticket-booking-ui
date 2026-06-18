@@ -22,7 +22,7 @@ class TheaterAvailable extends StatelessWidget {
                   ),
                   SizedBox(height: 25),
                   SizedBox(
-                    height: 100,
+                    height: 75,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
@@ -54,22 +54,10 @@ class TheaterAvailable extends StatelessWidget {
                     spacing: 10,
                     runSpacing: 10,
                     children: [
-                      AppChip(
-                        label: "09:30 AM",
-                        onPressed: () {},
-                      ),
-                      AppChip(
-                        label: "12:30 AM",
-                        onPressed: () {},
-                      ),
-                      AppChip(
-                        label: "03:30 PM",
-                        onPressed: () {},
-                      ),
-                      AppChip(
-                        label: "08:40 PM",
-                        onPressed: () {},
-                      ),
+                      AppChip(label: "09:30 AM", onPressed: () {}),
+                      AppChip(label: "12:30 AM", onPressed: () {}),
+                      AppChip(label: "03:30 PM", onPressed: () {}),
+                      AppChip(label: "08:40 PM", onPressed: () {}),
                     ],
                   ),
                   SizedBox(height: 25),
@@ -88,22 +76,10 @@ class TheaterAvailable extends StatelessWidget {
                     spacing: 10,
                     runSpacing: 10,
                     children: [
-                      AppChip(
-                        label: "10:15 AM",
-                        onPressed: () {},
-                      ),
-                      AppChip(
-                        label: "01:45 PM",
-                        onPressed: () {},
-                      ),
-                      AppChip(
-                        label: "04:20 PM",
-                        onPressed: () {},
-                      ),
-                      AppChip(
-                        label: "09:00 PM",
-                        onPressed: () {},
-                      ),
+                      AppChip(label: "10:15 AM", onPressed: () {}),
+                      AppChip(label: "01:45 PM", onPressed: () {}),
+                      AppChip(label: "04:20 PM", onPressed: () {}),
+                      AppChip(label: "09:00 PM", onPressed: () {}),
                     ],
                   ),
                   SizedBox(height: 20),
@@ -118,46 +94,120 @@ class TheaterAvailable extends StatelessWidget {
 }
 
 class MoviCard extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return AppContainer(
       borderRadius: 20,
       backgroundColor: Colors.white,
+      padding: EdgeInsets.all(20),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: [
           AppText(
-            "Ant Man and The Wasp",
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            "Ant Man and the Wasp",
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 15),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Expanded(
-                child: AppChip(label: "Friday, 12", onPressed: () {}),
+              AppIcon(
+                icon: Icons.star_border,
+                size: 16,
+                iconColor: Colors.grey,
+                backgroundColor: Colors.transparent,
               ),
-              SizedBox(width: 10),
-              Expanded(
-                child: AppChip(label: "09:30 AM", onPressed: () {}),
+              SizedBox(width: 5),
+              AppText(
+                "4.9",
+                style: TextStyle(color: Colors.grey, fontSize: 12),
+              ),
+              SizedBox(width: 15),
+              AppIcon(
+                icon: Icons.access_time,
+                size: 16,
+                iconColor: Colors.grey,
+                backgroundColor: Colors.transparent,
+              ),
+              SizedBox(width: 5),
+              AppText(
+                "111 mins",
+                style: TextStyle(color: Colors.grey, fontSize: 12),
+              ),
+              SizedBox(width: 15),
+              AppIcon(
+                icon: Icons.theaters_outlined,
+                size: 16,
+                iconColor: Colors.grey,
+                backgroundColor: Colors.transparent,
+              ),
+              SizedBox(width: 5),
+              AppText(
+                "IMAX 3D",
+                style: TextStyle(color: Colors.grey, fontSize: 12),
               ),
             ],
           ),
-          SizedBox(height: 10),
-          AppChip(label: "Imagix Cinemas: Anaheim", onPressed: () {}),
+          SizedBox(height: 15),
+          Divider(color: Colors.grey.shade200, thickness: 1),
+          SizedBox(height: 15),
+          Row(
+            children: [
+              AppText(
+                "Synopsis",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              Spacer(),
+              AppContainer(
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                borderRadius: 20,
+                backgroundColor: Colors.grey.shade100,
+                child: AppText(
+                  "Action",
+                  style: TextStyle(color: Colors.grey, fontSize: 12),
+                ),
+              ),
+              SizedBox(width: 8),
+              AppContainer(
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                borderRadius: 20,
+                backgroundColor: Colors.grey.shade100,
+                child: AppText(
+                  "Adventure",
+                  style: TextStyle(color: Colors.grey, fontSize: 12),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 15),
+          AppText(
+            "Scott Lang is grappling with the consequence superhero and a father. Approached by Hope van Dyne and Dr. Hank Pym, Lang must once again don ...",
+            style: TextStyle(color: Colors.grey, fontSize: 10, height: 1.5),
+          ),
+          SizedBox(height: 15),
+          AppContainer(
+            padding: EdgeInsets.symmetric(horizontal: 90, vertical: 2),
+            borderRadius: 20,
+            backgroundColor: Colors.grey.shade100,
+            child: AppIcon(
+              icon: Icons.keyboard_arrow_down,
+              iconColor: Colors.grey,
+              size: 24,
+              backgroundColor: Colors.transparent,
+            ),
+          ),
         ],
       ),
     );
-
   }
 }
+
 class DateCard extends StatelessWidget {
   final String day;
   final String date;
   final bool isSelected;
 
   const DateCard({
-
     required this.day,
     required this.date,
     this.isSelected = false,
@@ -167,27 +217,30 @@ class DateCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppContainer(
       width: 60,
-      backgroundColor:
-      isSelected ? Colors.deepOrange : Colors.white,
+      backgroundColor: Colors.white,
       borderRadius: 15,
+      padding: EdgeInsets.zero,
+      border: Border.all(
+        color: isSelected ? Colors.blue.shade300 : Colors.grey.shade200,
+        width: isSelected ? 2.0 : 1.0,
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           AppText(
             day,
             style: TextStyle(
-              color: isSelected ? Colors.white : Colors.grey,
-              fontSize: 12,
+              color: isSelected ? Colors.black87 : Colors.grey,
+              fontSize: 10,
+              fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
             ),
           ),
-
           SizedBox(height: 5),
-
           AppText(
             date,
             style: TextStyle(
-              color: isSelected ? Colors.white : Colors.black,
-              fontSize: 18,
+              color: Colors.black,
+              fontSize: 15,
               fontWeight: FontWeight.bold,
             ),
           ),

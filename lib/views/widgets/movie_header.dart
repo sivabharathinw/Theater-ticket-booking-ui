@@ -3,17 +3,19 @@ import 'package:flutter/material.dart';
 class MovieHeader extends StatelessWidget {
   final String imageUrl;
   final Widget card;
+  final double height;
 
   const MovieHeader({
     super.key,
     required this.imageUrl,
     required this.card,
+    this.height = 380,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 380,
+      height: height,
       child: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -30,7 +32,7 @@ class MovieHeader extends StatelessWidget {
           Positioned(
             left: 20,
             right: 20,
-            top: 80,
+            top: 140,
             child: Container(
               decoration: BoxDecoration(
                 boxShadow: [

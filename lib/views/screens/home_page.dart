@@ -9,25 +9,25 @@ class HomeScreen extends StatelessWidget {
       "name": "Black Widow",
       "duration": "1h 22m",
       "image":
-          "https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
+      "https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
     },
     {
       "name": "Avengers",
       "duration": "1h 42m",
       "image":
-          "https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+      "https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
     },
     {
       "name": "Shang Chi",
       "duration": "1h 26m",
       "image":
-          "https://image.tmdb.org/t/p/w500/d08HqqeBQSwN8i8MEvpsZ8Cb438.jpg",
+      "https://image.tmdb.org/t/p/w500/d08HqqeBQSwN8i8MEvpsZ8Cb438.jpg",
     },
     {
       "name": "The Tomorrow",
       "duration": "1h 50m",
       "image":
-          "https://image.tmdb.org/t/p/w500/AoWY1gkcNzabh229Icboa1Ff0BM.jpg",
+      "https://image.tmdb.org/t/p/w500/AoWY1gkcNzabh229Icboa1Ff0BM.jpg",
     },
   ];
 
@@ -80,7 +80,7 @@ class HomeScreen extends StatelessWidget {
               padding: EdgeInsets.only(right: 16),
               child: ProfileAvatar(
                 imageUrl:
-                    "https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
+                "https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
               ),
             ),
           ],
@@ -97,38 +97,32 @@ class HomeScreen extends StatelessWidget {
                   clipBehavior: Clip.none,
                   children: [
                     Positioned(
-                      left: 100,
-                      top: 20,
+                      left: 55,
+                      top: 60,
                       child: MoviePoster(
+                        opacity: 0.6,
                         width: 230,
-                        height: 260,
+                        height: 240,
+
                         image:
-                            "https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+                        "https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
                       ),
                     ),
+
                     Positioned(
-                      left: 40,
-                      top: 20,
+                      left: 30,
+                      top: 30,
                       child: MoviePoster(
+                        opacity: 0.8,
                         width: 230,
-                        height: 310,
+                        height: 295,
                         image:
-                            "https://image.tmdb.org/t/p/w500/AoWY1gkcNzabh229Icboa1Ff0BM.jpg",
-                      ),
-                    ),
-                    Positioned(
-                      left: 50,
-                      top: 20,
-                      child: MoviePoster(
-                        width: 230,
-                        height: 300,
-                        image:
-                            "https://image.tmdb.org/t/p/w500/d08HqqeBQSwN8i8MEvpsZ8Cb438.jpg",
+                        "https://image.tmdb.org/t/p/w500/d08HqqeBQSwN8i8MEvpsZ8Cb438.jpg",
                       ),
                     ),
                     MoviePoster(
                       image:
-                          "https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
+                      "https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
 
                       height: 380,
                       width: 230,
@@ -217,36 +211,48 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
 class MoviePoster extends StatelessWidget {
   final String image;
   final double width;
   final double height;
+  final double opacity;
 
-  const MoviePoster({required this.image, this.width = 250, this.height = 340});
+  const MoviePoster({
+    super.key,
+    required this.image,
+    this.width = 250,
+    this.height = 340,
+    this.opacity = 1.0,
+  });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
       height: height,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(25),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black26,
-              blurRadius: 15,
-              offset: Offset(7, 7),
+      child: Opacity(
+        opacity: opacity,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 15,
+                offset: Offset(7, 7),
+              ),
+            ],
+          ),
+          child: AppContainer(
+            padding: EdgeInsets.zero,
+            borderRadius: 25,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Image.network(
+                image,
+                fit: BoxFit.cover,
+              ),
             ),
-          ],
-        ),
-        child: AppContainer(
-          padding: EdgeInsets.zero,
-          borderRadius: 25,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(25),
-            child: Image.network(image, fit: BoxFit.cover),
           ),
         ),
       ),

@@ -9,14 +9,16 @@ class AppContainer extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
   final BoxShape shape;
   final double borderRadius;
+  final BorderRadiusGeometry? customBorderRadius;
   final BoxBorder? border;
 
   const AppContainer({
     super.key,
     required this.child,
-    this.padding = const EdgeInsets.all(16),
+    this.padding = const EdgeInsets.all(10),
     this.backgroundColor = Colors.white,
     this.borderRadius = 12,
+    this.customBorderRadius,
     this.width,
     this.height,
     this.margin,
@@ -36,7 +38,7 @@ class AppContainer extends StatelessWidget {
         shape: shape,
         border: border,
         borderRadius: shape == BoxShape.rectangle 
-            ? BorderRadius.circular(borderRadius) 
+            ? (customBorderRadius ?? BorderRadius.circular(borderRadius)) 
             : null,
       ),
       child: child,

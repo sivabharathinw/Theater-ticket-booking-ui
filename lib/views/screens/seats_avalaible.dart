@@ -12,7 +12,7 @@ class SeatsAvalaible extends StatelessWidget {
             child: Column(
               children: [
                 MovieHeader(
-                  height: 280,
+                  height: 200,
                   imageUrl:
                       "https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
                   card: MoviCard(),
@@ -21,7 +21,7 @@ class SeatsAvalaible extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     children: [
-                      SizedBox(height: 50),
+                      SizedBox(height: 130),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,7 +38,7 @@ class SeatsAvalaible extends StatelessWidget {
                             "Available",
                             style: TextStyle(color: Colors.grey, fontSize: 12),
                           ),
-                          SizedBox(width: 15),
+                          SizedBox(width: 10),
                           AppContainer(
                             width: 10,
                             height: 10,
@@ -68,7 +68,7 @@ class SeatsAvalaible extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: 18),
 
                       AppContainer(
                         width: 250,
@@ -77,7 +77,7 @@ class SeatsAvalaible extends StatelessWidget {
                         backgroundColor: Colors.grey.shade200,
                         child: SizedBox(),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 30),
                       SizedBox(
                         height: 220,
                         child: ListView.builder(
@@ -89,15 +89,15 @@ class SeatsAvalaible extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Seat(color: Colors.black),
-                                  Seat(color: Colors.grey),
+                                  Seat(color: Colors.grey.shade200),
                                   SizedBox(width: 5),
                                   Seat(color: Colors.orange),
                                   Seat(color: Colors.black),
-                                  Seat(color: Colors.grey),
+                                  Seat(color: Colors.grey.shade200),
                                   SizedBox(width: 20),
                                   Seat(color: Colors.orange),
                                   Seat(color: Colors.black),
-                                  Seat(color: Colors.grey),
+                                  Seat(color: Colors.grey.shade200),
                                 ],
                               ),
                             );
@@ -135,7 +135,7 @@ class SeatsAvalaible extends StatelessWidget {
                               padding: EdgeInsets.zero,
                               child: SizedBox(),
                             ),
-                            SizedBox(width: 60),
+                            SizedBox(width:30),
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -170,8 +170,9 @@ class SeatsAvalaible extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            Spacer(),
-                            AppContainer(
+                            Padding(
+                              padding:EdgeInsets.only(left:31.6),
+                        child:    AppContainer(
                               width: 50,
                               height: 50,
                               backgroundColor: Colors.white,
@@ -182,7 +183,7 @@ class SeatsAvalaible extends StatelessWidget {
                                 color: Colors.deepOrange,
                               ),
                             ),
-                          ],
+                            )],
                         ),
                       ),
                       SizedBox(height: 20),
@@ -207,10 +208,15 @@ class Seat extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppContainer(
       width: 20,
-      height: 20,
+      height: 15,
       margin: EdgeInsets.all(4),
       backgroundColor: color,
-      borderRadius: 4,
+      customBorderRadius: BorderRadius.only(
+        topLeft: Radius.circular(7),
+        topRight: Radius.circular(7),
+        bottomLeft: Radius.circular(2),
+        bottomRight: Radius.circular(2),
+      ),
       padding: EdgeInsets.zero,
       child: SizedBox(),
     );
@@ -225,7 +231,6 @@ class MoviCard extends StatelessWidget {
       backgroundColor: Colors.white,
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
       child: Column(
-        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           AppText(

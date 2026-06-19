@@ -20,7 +20,7 @@ class MovieHeader extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(16)),
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(13)),
             child: Image.network(
               imageUrl,
               height: 250,

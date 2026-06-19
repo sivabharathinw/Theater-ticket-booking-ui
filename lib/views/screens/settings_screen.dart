@@ -13,21 +13,25 @@ class SettingsScreen extends StatelessWidget {
         appBar: MyAppbar(
           title: AppText(
             "Account",
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
+          centerTitle: true,
+          toolbarHeight: 50,
+          titlePadding: EdgeInsets.zero,
           actions: [],
         ),
         body: SingleChildScrollView(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.only(left: 20, right: 20, bottom: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
-                  ProfileAvatar(size: 60),
+                  ProfileAvatar(
+                    size: 60,
+                    imageUrl:
+                        "https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
+                  ),
                   SizedBox(width: 15),
                   Expanded(
                     child: Column(
@@ -45,7 +49,7 @@ class SettingsScreen extends StatelessWidget {
                           "andrew.ainsley@yourdomain.com",
                           style: TextStyle(
                             fontSize: 12,
-                            color: Colors.grey,
+                            color: Colors.grey.shade400,
                           ),
                         ),
                       ],
@@ -59,64 +63,77 @@ class SettingsScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              
-              SizedBox(height: 30),
-              Divider(color: Colors.grey),
+
+
+              Divider(color: Colors.grey.shade400),
               SizedBox(height: 20),
-              
 
               SettingItem(icon: Icons.favorite_border, title: "Watchlist"),
               SettingItem(icon: Icons.grid_view, title: "Movie Interest"),
               SettingItem(icon: Icons.payment, title: "Payment Methods"),
-              
-              SizedBox(height: 10),
+
+              SizedBox(height: 1),
 
               Row(
                 children: [
-                  AppText("General", style: TextStyle(color: Colors.black, fontSize: 14)),
+                  AppText(
+                    "General",
+                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                  ),
                   SizedBox(width: 10),
-                  Expanded(child: Divider(color: Colors.grey)),
+                  Expanded(child: Divider(color: Colors.grey.shade400)),
                 ],
               ),
               SizedBox(height: 20),
-              
+
               SettingItem(icon: Icons.person_outline, title: "Personal Info"),
-              SettingItem(icon: Icons.notifications_none, title: "Notification"),
+              SettingItem(
+                icon: Icons.notifications_none,
+                title: "Notification",
+              ),
               SettingItem(icon: Icons.security, title: "Security"),
               SettingItem(
-                icon: Icons.language, 
-                title: "Language", 
+                icon: Icons.language,
+                title: "Language",
                 trailing: Row(
                   children: [
-                    AppText("English (US)", style: TextStyle(color: Colors.black, fontSize: 14)),
+                    AppText(
+                      "English (US)",
+                      style: TextStyle(color: Colors.black, fontSize: 14),
+                    ),
                     SizedBox(width: 10),
-                    Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      size: 16,
+                      color: Colors.grey.shade400,
+                    ),
                   ],
                 ),
               ),
               SettingItem(
-                icon: Icons.visibility_outlined, 
-                title: "Dark Mode", 
+                icon: Icons.visibility_outlined,
+                title: "Dark Mode",
                 trailing: Switch(
-                  value:false,
-                  onChanged: (val) {
-
-                  },
+                  value: false,
+                  onChanged: (val) {},
                   activeColor: Colors.deepOrange,
                 ),
               ),
-              
+
               SizedBox(height: 10),
 
               Row(
                 children: [
-                  AppText("About", style: TextStyle(color: Colors.black, fontSize: 14)),
-                  SizedBox(width: 10),
-                  Expanded(child: Divider(color: Colors.grey.shade500)),
+                  AppText(
+                    "About",
+                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                  ),
+                  SizedBox(width: 5),
+                  Expanded(child: Divider(color: Colors.grey.shade400)),
                 ],
               ),
               SizedBox(height: 20),
-              
+
               SettingItem(icon: Icons.help_outline, title: "Help Center"),
             ],
           ),
@@ -131,12 +148,7 @@ class SettingItem extends StatelessWidget {
   final String title;
   final Widget? trailing;
 
-  SettingItem({
-
-    required this.icon,
-    required this.title,
-    this.trailing,
-  });
+  SettingItem({required this.icon, required this.title, this.trailing});
 
   @override
   Widget build(BuildContext context) {
@@ -154,13 +166,15 @@ class SettingItem extends StatelessWidget {
           Expanded(
             child: AppText(
               title,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
           ),
-          trailing ?? Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
+          trailing ??
+              Icon(
+                Icons.arrow_forward_ios,
+                size: 16,
+                color: Colors.grey.shade400,
+              ),
         ],
       ),
     );

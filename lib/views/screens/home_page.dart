@@ -150,7 +150,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
 
-              SizedBox(height: 15),
+              SizedBox(height: 10),
 
               SizedBox(
                 height: 220,
@@ -180,7 +180,7 @@ class HomeScreen extends StatelessWidget {
                           ),
 
                           Padding(
-                            padding: EdgeInsets.all(8),
+                            padding: EdgeInsets.all(5),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [

@@ -115,42 +115,42 @@ class MovieSearchScreen extends StatelessWidget {
           ],
         ),
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.0,vertical :16.0),
+          padding: EdgeInsets.symmetric(horizontal: 16.0,vertical :5.0),
           child: Column(
             children: [
               AppContainer(
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 0),
+                padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
                 backgroundColor: Colors.white,
                 borderRadius: 30,
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: 'Search movies or theatres',
                     prefixIcon: Padding(
-                      padding: const EdgeInsets.only(left: 12.0, right: 8.0),
+                      padding:  EdgeInsets.only(left: 12.0, right: 8.0),
                       child: AppIcon(
                         icon: Icons.search,
-                        iconColor: Colors.grey,
+                        iconColor: Colors.grey.shade400,
                         backgroundColor: Colors.transparent,
                       ),
                     ),
 
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(color: Colors.grey),
+                      borderSide:  BorderSide(color: Colors.grey.shade400),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(color: Colors.blue),
+                      borderSide: BorderSide(color: Colors.blue),
                     ),
-                    contentPadding: const EdgeInsets.symmetric(
+                    contentPadding:  EdgeInsets.symmetric(
                       vertical: 0,
                       horizontal: 16,
                     ),
-                    hintStyle: const TextStyle(color: Colors.grey),
+                    hintStyle:  TextStyle(color: Colors.grey),
                   ),
                 ),
               ),
-              SizedBox(height: 35),
+              SizedBox(height: 25),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -167,13 +167,13 @@ class MovieSearchScreen extends StatelessWidget {
                     children: [
                       AppText(
                         "Filters",
-                        style: TextStyle(fontSize: 14, color: Colors.black54),
+                        style: TextStyle(fontSize: 14, color: Colors.black),
                       ),
                       SizedBox(width: 6),
                       AppIcon(
                         icon: Icons.sort,
                         size: 20,
-                        iconColor: Colors.black,
+                        iconColor: Colors.grey.shade400,
                         backgroundColor: Colors.transparent,
                       ),
                     ],
@@ -183,6 +183,8 @@ class MovieSearchScreen extends StatelessWidget {
               SizedBox(height: 16),
 
               Expanded(
+                child:Padding(
+                  padding: EdgeInsets.only(left:7),
                 child: GridView.count(
                   crossAxisCount: 3,
                   crossAxisSpacing: 16,
@@ -205,8 +207,7 @@ class MovieSearchScreen extends StatelessWidget {
                                 height: double.infinity,
                                 errorBuilder: (context, error, stackTrace) =>
                                     AppContainer(
-                                      backgroundColor:
-                                          Colors.grey[300] ?? Colors.grey,
+                                      backgroundColor:Colors.grey,
                                       padding: EdgeInsets.zero,
                                       child: Center(
                                         child: Icon(
@@ -238,7 +239,7 @@ class MovieSearchScreen extends StatelessWidget {
                   }).toList(),
                 ),
               ),
-            ],
+              ),],
           ),
         ),
       ),

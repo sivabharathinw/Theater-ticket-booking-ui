@@ -18,7 +18,7 @@ class AppChip extends StatelessWidget {
       label: Text(label),
       backgroundColor: isSelected ? Colors.orange : Colors.white,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(1),
+        borderRadius: BorderRadius.circular(15),
         side: BorderSide(color: Colors.grey.shade300),
       ),
     );

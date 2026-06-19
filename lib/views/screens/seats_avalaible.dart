@@ -127,7 +127,7 @@ class SeatsAvalaible extends StatelessWidget {
                                 fontSize: 16,
                               ),
                             ),
-                            SizedBox(width: 15),
+                            SizedBox(width: 20),
                             AppContainer(
                               width: 1,
                               height: 30,
@@ -135,7 +135,7 @@ class SeatsAvalaible extends StatelessWidget {
                               padding: EdgeInsets.zero,
                               child: SizedBox(),
                             ),
-                            SizedBox(width:30),
+                            SizedBox(width:40),
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -171,7 +171,7 @@ class SeatsAvalaible extends StatelessWidget {
                               ],
                             ),
                             Padding(
-                              padding:EdgeInsets.only(left:31.6),
+                              padding:EdgeInsets.only(left:16.3),
                         child:    AppContainer(
                               width: 50,
                               height: 50,
@@ -250,7 +250,7 @@ class MoviCard extends StatelessWidget {
                   child: Center(
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
-                        isExpanded: false,
+
                         value: "FRIDAY, 12",
                         icon: Icon(Icons.keyboard_arrow_down, size: 14),
                         style: TextStyle(

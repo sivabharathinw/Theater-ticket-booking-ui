@@ -27,13 +27,14 @@ class TheaterAvailable extends StatelessWidget {
                       "https://image.tmdb.org/t/p/w500/d08HqqeBQSwN8i8MEvpsZ8Cb438.jpg",
                   card: MoviCard(),
                 ),
+                SizedBox(height:40),
                 Padding(
                   padding: EdgeInsets.all(20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 75,
+                        height: 60,
                         child: ListView(
                           scrollDirection: Axis.horizontal,
                           children: [
@@ -124,7 +125,8 @@ class TheaterAvailable extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(height: 80),
+                      SizedBox(height: 25),
+
                     ],
                   ),
                 ),

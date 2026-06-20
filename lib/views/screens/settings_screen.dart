@@ -11,6 +11,12 @@ class SettingsScreen extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: MyAppbar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
           title: AppText(
             "Account",
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
@@ -34,25 +40,28 @@ class SettingsScreen extends StatelessWidget {
                   ),
                   SizedBox(width: 15),
                   Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        AppText(
-                          "Andrew Ainsley",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          AppText(
+                            "Andrew Ainsley",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 5),
-                        AppText(
-                          "andrew.ainsley@yourdomain.com",
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey.shade400,
+                          SizedBox(height: 1),
+                          AppText(
+                            "andrew.ainsley@yourdomain.com",
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.grey.shade400,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                   AppIcon(
@@ -63,7 +72,7 @@ class SettingsScreen extends StatelessWidget {
                   ),
                 ],
               ),
-
+              SizedBox(height: 15),
 
               Divider(color: Colors.grey.shade400),
               SizedBox(height: 20),
@@ -113,14 +122,13 @@ class SettingsScreen extends StatelessWidget {
               SettingItem(
                 icon: Icons.visibility_outlined,
                 title: "Dark Mode",
+                bottomMargin: 15,
                 trailing: Switch(
                   value: false,
                   onChanged: (val) {},
                   activeColor: Colors.deepOrange,
                 ),
               ),
-
-              SizedBox(height: 10),
 
               Row(
                 children: [
@@ -147,13 +155,19 @@ class SettingItem extends StatelessWidget {
   final IconData icon;
   final String title;
   final Widget? trailing;
+  final double bottomMargin;
 
-  SettingItem({required this.icon, required this.title, this.trailing});
+  SettingItem({
+    required this.icon,
+    required this.title,
+    this.trailing,
+    this.bottomMargin = 25,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 25),
+      padding: EdgeInsets.only(bottom: bottomMargin),
       child: Row(
         children: [
           AppIcon(

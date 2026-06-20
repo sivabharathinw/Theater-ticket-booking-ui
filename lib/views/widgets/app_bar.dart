@@ -8,6 +8,7 @@ class MyAppbar extends AppBar {
     bool centerTitle = false,
     double toolbarHeight = 90,
     EdgeInsetsGeometry titlePadding = const EdgeInsets.only(top: 20),
+    Widget? leading,
   }) : super(
          title: Padding(padding: titlePadding, child: title),
          backgroundColor: Colors.transparent,
@@ -16,5 +17,6 @@ class MyAppbar extends AppBar {
          actions: actions,
          centerTitle: centerTitle,
          toolbarHeight: toolbarHeight,
+         leading: leading,
        );
 }

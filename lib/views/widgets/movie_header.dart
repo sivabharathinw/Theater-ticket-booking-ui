@@ -23,7 +23,7 @@ class MovieHeader extends StatelessWidget {
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(13)),
             child: Image.network(
               imageUrl,
-              height: 250,
+              height: 270,
               width: double.infinity,
               fit: BoxFit.cover,
             ),
@@ -32,7 +32,7 @@ class MovieHeader extends StatelessWidget {
           Positioned(
             left: 20,
             right: 20,
-            top: 150,
+            top: 100,
             child: Container(
               decoration: BoxDecoration(
                 boxShadow: [

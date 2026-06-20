@@ -6,7 +6,7 @@ import 'package:movie_booking/views/screens/seats_avalaible.dart';
 import 'package:movie_booking/views/screens/settings_screen.dart';
 
 void main() {
-  final index =1;
+  final index = 2;
   if (index == 0) {
     runApp(HomeScreen());
   } else if (index == 1) {

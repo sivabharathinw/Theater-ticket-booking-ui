@@ -115,18 +115,21 @@ class MovieSearchScreen extends StatelessWidget {
           ],
         ),
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.0,vertical :5.0),
+          padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 5.0),
           child: Column(
             children: [
-              AppContainer(
-                padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                backgroundColor: Colors.white,
-                borderRadius: 30,
+              SizedBox(
+                height: 35,
+                width: 305,
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: 'Search movies or theatres',
+                    prefixIconConstraints: BoxConstraints(
+                      minWidth: 0,
+                      minHeight: 0,
+                    ),
                     prefixIcon: Padding(
-                      padding:  EdgeInsets.only(left: 12.0, right: 8.0),
+                      padding: EdgeInsets.only(left: 10, right: 3),
                       child: AppIcon(
                         icon: Icons.search,
                         iconColor: Colors.grey.shade400,
@@ -136,21 +139,21 @@ class MovieSearchScreen extends StatelessWidget {
 
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
-                      borderSide:  BorderSide(color: Colors.grey.shade400),
+                      borderSide: BorderSide(color: Colors.grey.shade400),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                       borderSide: BorderSide(color: Colors.blue),
                     ),
-                    contentPadding:  EdgeInsets.symmetric(
+                    contentPadding: EdgeInsets.symmetric(
                       vertical: 0,
                       horizontal: 16,
                     ),
-                    hintStyle:  TextStyle(color: Colors.grey),
+                    hintStyle: TextStyle(color: Colors.grey),
                   ),
                 ),
               ),
-              SizedBox(height: 25),
+              SizedBox(height: 28),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -167,7 +170,11 @@ class MovieSearchScreen extends StatelessWidget {
                     children: [
                       AppText(
                         "Filters",
-                        style: TextStyle(fontSize: 14, color: Colors.black),
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                       SizedBox(width: 6),
                       AppIcon(
@@ -183,63 +190,64 @@ class MovieSearchScreen extends StatelessWidget {
               SizedBox(height: 16),
 
               Expanded(
-                child:Padding(
-                  padding: EdgeInsets.only(left:7),
-                child: GridView.count(
-                  crossAxisCount: 3,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                  childAspectRatio: 0.55,
-                  children: movies.map((movie) {
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: AppContainer(
-                            padding: EdgeInsets.zero,
-                            borderRadius: 12,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(12),
-                              child: Image.network(
-                                movie["image"]!,
-                                fit: BoxFit.cover,
-                                width: double.infinity,
-                                height: double.infinity,
-                                errorBuilder: (context, error, stackTrace) =>
-                                    AppContainer(
-                                      backgroundColor:Colors.grey,
-                                      padding: EdgeInsets.zero,
-                                      child: Center(
-                                        child: Icon(
-                                          Icons.movie,
-                                          color: Colors.grey,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 7),
+                  child: GridView.count(
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 16,
+                    mainAxisSpacing: 16,
+                    childAspectRatio: 0.55,
+                    children: movies.map((movie) {
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: AppContainer(
+                              padding: EdgeInsets.zero,
+                              borderRadius: 12,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(12),
+                                child: Image.network(
+                                  movie["image"]!,
+                                  fit: BoxFit.cover,
+                                  width: double.infinity,
+                                  height: double.infinity,
+                                  errorBuilder: (context, error, stackTrace) =>
+                                      AppContainer(
+                                        backgroundColor: Colors.grey,
+                                        padding: EdgeInsets.zero,
+                                        child: Center(
+                                          child: Icon(
+                                            Icons.movie,
+                                            color: Colors.grey,
+                                          ),
                                         ),
                                       ),
-                                    ),
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        SizedBox(height: 8),
-                        AppText(
-                          movie["title"]!,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            color: Colors.black,
+                          SizedBox(height: 8),
+                          AppText(
+                            movie["title"]!,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 1),
-                        AppText(
-                          movie["duration"]!,
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
-                        ),
-                      ],
-                    );
-                  }).toList(),
+                          SizedBox(height: 1),
+                          AppText(
+                            movie["duration"]!,
+                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                          ),
+                        ],
+                      );
+                    }).toList(),
+                  ),
                 ),
               ),
-              ),],
+            ],
           ),
         ),
       ),

@@ -27,9 +27,11 @@ class TheaterAvailable extends StatelessWidget {
                       "https://image.tmdb.org/t/p/w500/d08HqqeBQSwN8i8MEvpsZ8Cb438.jpg",
                   card: MoviCard(),
                 ),
-                SizedBox(height:40),
+                SizedBox(height: 18),
+
                 Padding(
-                  padding: EdgeInsets.all(20),
+                  padding: EdgeInsets.all(2),
+
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -51,82 +53,98 @@ class TheaterAvailable extends StatelessWidget {
                         ),
                       ),
 
-                      SizedBox(height: 20),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: AppText(
-                          "Imagix Cinemas: Anaheim",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                      SizedBox(height: 24),
+                      Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: AppText(
+                            "Imagix Cinemas: Anaheim",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: 10),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
-                        child: Wrap(
-                          spacing: 10,
-                          children: [
-                            AppChip(label: "09:30 AM", onPressed: () {}),
-                            AppChip(label: "12:30 AM", onPressed: () {}),
-                            AppChip(label: "03:30 PM", onPressed: () {}),
-                            AppChip(label: "08:40 PM", onPressed: () {}),
-                          ],
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Wrap(
+                            spacing: 10,
+                            children: [
+                              AppChip(label: "09:30 AM", onPressed: () {}),
+                              AppChip(label: "12:30 AM", onPressed: () {}),
+                              AppChip(label: "03:30 PM", onPressed: () {}),
+                              AppChip(label: "08:40 PM", onPressed: () {}),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 25),
+                      Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: AppText(
+                            "Escape Cinemas",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Wrap(
+                            spacing: 10,
+                            children: [
+                              AppChip(label: "09:30 AM", onPressed: () {}),
+                              AppChip(label: "12:30 AM", onPressed: () {}),
+                              AppChip(label: "03:30 PM", onPressed: () {}),
+                              AppChip(label: "08:40 PM", onPressed: () {}),
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(height: 25),
 
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: AppText(
-                          "Escape Cinemas",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                      Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: AppText(
+                            "Cineplex Movies",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: 10),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
-                        child: Wrap(
-                          spacing: 10,
-                          children: [
-                            AppChip(label: "09:30 AM", onPressed: () {}),
-                            AppChip(label: "12:30 AM", onPressed: () {}),
-                            AppChip(label: "03:30 PM", onPressed: () {}),
-                            AppChip(label: "08:40 PM", onPressed: () {}),
-                          ],
-                        ),
-                      ),
-                      SizedBox(height: 25),
-
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: AppText(
-                          "Cineplex Movies",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Wrap(
+                            spacing: 10,
+                            children: [
+                              AppChip(label: "09:30 AM", onPressed: () {}),
+                              AppChip(label: "12:30 AM", onPressed: () {}),
+                              AppChip(label: "03:30 PM", onPressed: () {}),
+                              AppChip(label: "08:40 PM", onPressed: () {}),
+                            ],
                           ),
                         ),
                       ),
-                      SizedBox(height: 15),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Wrap(
-                          spacing: 10,
-                          children: [
-                            AppChip(label: "09:30 AM", onPressed: () {}),
-                            AppChip(label: "12:30 AM", onPressed: () {}),
-                            AppChip(label: "03:30 PM", onPressed: () {}),
-                            AppChip(label: "08:40 PM", onPressed: () {}),
-                          ],
-                        ),
-                      ),
                       SizedBox(height: 25),
-
                     ],
                   ),
                 ),
@@ -260,36 +278,39 @@ class DateCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppContainer(
-      width: 60,
-      backgroundColor: Colors.white,
-      borderRadius: 15,
-      padding: EdgeInsets.zero,
-      border: Border.all(
-        color: isSelected ? Colors.blue.shade300 : Colors.grey.shade200,
-        width: isSelected ? 2.0 : 1.0,
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          AppText(
-            day,
-            style: TextStyle(
-              color: isSelected ? Colors.black87 : Colors.grey,
-              fontSize: 10,
-              fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+    return Padding(
+      padding: EdgeInsetsGeometry.only(left: 15),
+      child: AppContainer(
+        width: 60,
+        backgroundColor: Colors.white,
+        borderRadius: 15,
+        padding: EdgeInsets.zero,
+        border: Border.all(
+          color: isSelected ? Colors.blue.shade300 : Colors.grey.shade200,
+          width: isSelected ? 2.0 : 1.0,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AppText(
+              day,
+              style: TextStyle(
+                color: isSelected ? Colors.black87 : Colors.grey,
+                fontSize: 10,
+                fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+              ),
             ),
-          ),
-          SizedBox(height: 5),
-          AppText(
-            date,
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
+            SizedBox(height: 5),
+            AppText(
+              date,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

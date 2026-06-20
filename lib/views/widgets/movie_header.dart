@@ -32,7 +32,7 @@ class MovieHeader extends StatelessWidget {
           Positioned(
             left: 20,
             right: 20,
-            top: 100,
+            top: 115,
             child: Container(
               decoration: BoxDecoration(
                 boxShadow: [

@@ -12,7 +12,7 @@ class SeatsAvalaible extends StatelessWidget {
             child: Column(
               children: [
                 MovieHeader(
-                  height: 200,
+                  height: 190,
                   imageUrl:
                       "https://image.tmdb.org/t/p/w500/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
                   card: MoviCard(),
@@ -71,7 +71,7 @@ class SeatsAvalaible extends StatelessWidget {
                       SizedBox(height: 18),
 
                       AppContainer(
-                        width: 250,
+                        width: double.infinity,
                         height: 10,
                         borderRadius: 50,
                         backgroundColor: Colors.grey.shade200,
@@ -86,7 +86,8 @@ class SeatsAvalaible extends StatelessWidget {
                             return Padding(
                               padding: EdgeInsets.only(bottom: 8),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Seat(color: Colors.black),
                                   Seat(color: Colors.grey.shade200),
@@ -107,7 +108,7 @@ class SeatsAvalaible extends StatelessWidget {
                       SizedBox(height: 15),
 
                       AppContainer(
-                        width: 280,
+                        width: double.infinity,
                         height: 50,
                         backgroundColor: Colors.deepOrange,
                         borderRadius: 25,
@@ -135,7 +136,7 @@ class SeatsAvalaible extends StatelessWidget {
                               padding: EdgeInsets.zero,
                               child: SizedBox(),
                             ),
-                            SizedBox(width:40),
+                            Spacer(),
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -171,19 +172,20 @@ class SeatsAvalaible extends StatelessWidget {
                               ],
                             ),
                             Padding(
-                              padding:EdgeInsets.only(left:16.3),
-                        child:    AppContainer(
-                              width: 50,
-                              height: 50,
-                              backgroundColor: Colors.white,
-                              borderRadius: 25,
-                              padding: EdgeInsets.zero,
-                              child: Icon(
-                                Icons.arrow_forward,
-                                color: Colors.deepOrange,
+                              padding: EdgeInsets.only(left: 16.3),
+                              child: AppContainer(
+                                width: 50,
+                                height: 50,
+                                backgroundColor: Colors.white,
+                                borderRadius: 25,
+                                padding: EdgeInsets.zero,
+                                child: Icon(
+                                  Icons.arrow_forward,
+                                  color: Colors.deepOrange,
+                                ),
                               ),
                             ),
-                            )],
+                          ],
                         ),
                       ),
                       SizedBox(height: 20),
@@ -250,7 +252,6 @@ class MoviCard extends StatelessWidget {
                   child: Center(
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
-
                         value: "FRIDAY, 12",
                         icon: Icon(Icons.keyboard_arrow_down, size: 14),
                         style: TextStyle(
